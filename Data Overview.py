@@ -92,10 +92,6 @@ import altair as alt
 import pydeck as pdk
 
 
-# Continue with the rest of your app
-
-
-
 # Load the data
 df = pd.read_excel(r"C:\Users\DELL\Documents\data.xlsx")
 df.rename(columns={'Latitude': 'latitude', 'Longitude': 'longitude', 'genre': 'gender', 'country': 'pays'}, inplace=True)
@@ -140,15 +136,6 @@ r = pdk.Deck(layers=[layer], initial_view_state=view_state, map_style='mapbox://
 # Display the PyDeck chart in Streamlit
 st.pydeck_chart(r)
 
-
-
-
-
-
-
-
-
-
 # Calculate the frequency (proportion) of each gender
 gender_frequency = filtered_data['genre'].value_counts(normalize=True)
 # Convert frequencies to percentages
@@ -176,11 +163,6 @@ for p in ax.patches:
 
 # Use Streamlit to display the matplotlib figure
 st.pyplot(fig)
-
-
-
-
-
 
 st.write("## Gender Distribution by country")
 st.markdown("""
@@ -210,9 +192,6 @@ ax.set_ylabel('Proportion (%)')
 plt.tight_layout()  # Adjust layout to make room for the legend
 
 st.pyplot(fig)
-
-
-
 
 st.write("## Age Distribution By Country")
 fig, ax = plt.subplots()
@@ -244,10 +223,6 @@ plt.tight_layout()  # Adjust layout to make room for the legend
 st.pyplot(fig)
 
 
-
-
-
-
 # Assuming 'df' is your DataFrame
 
 # Calculating the proportion of data sharing systems by gender
@@ -271,9 +246,6 @@ plt.ylabel('Gender')
 # Display the plot in Streamlit
 st.pyplot(fig)
 
-
-
-
 with st.expander('About', expanded=True):
     st.write('''
         - Data: Self Generated Data
@@ -283,15 +255,3 @@ with st.expander('About', expanded=True):
         - LinkedIn:https://www.linkedin.com/in/sp%C3%A9ro-falade-977180103/
         - Target: Make the dashboard User Friendly.        
     ''')
-
-
-
-
-
-
-
-
-
-
-
-
