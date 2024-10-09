@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-
-
 # CSS to inject contained in a multiline string
 custom_css = """
     <style>
@@ -43,9 +41,6 @@ st.markdown("""
 df = pd.read_excel(r"C:\Users\DELL\Documents\data.xlsx")
 
 
-
-
-
 # Load your DataFrame
 
 # Streamlit title
@@ -72,21 +67,6 @@ ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 # Display the plot in Streamlit
 st.pyplot(fig)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Assuming 'df' is your DataFrame
 st.write("## Data Sharing System Within Hospital")
 st.markdown("""
 The graph represents the distribution and prevalence of different data sharing systems utilized within hospital settings. Each bar in the graph corresponds to a specific data sharing system, with the height of the bar indicating the frequency or proportion of hospitals employing that particular system. Colors or patterns may differentiate the systems for clarity. This visualization aids in understanding the current landscape of data management and exchange practices in healthcare facilities.
@@ -120,28 +100,6 @@ plt.tight_layout()
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Assuming 'df' is your DataFrame
-
 # Calculating the proportion of data sharing systems by gender
 data_sharing_proportion = df.groupby('year')['politician_implication'].value_counts(normalize=True).unstack().fillna(0) * 100
 fig, ax = plt.subplots()
@@ -161,18 +119,6 @@ plt.ylabel('Gender')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-
-
-
-
-
-
-
-
-
-
-
-
 st.write("## Politician Involvement by Country")
 
 st.markdown("""
@@ -202,9 +148,6 @@ plt.tight_layout()  # Adjust layout to make room for the legend
 
 st.pyplot(fig)
 
-
-
-
 with st.expander('About', expanded=True):
     st.write('''
         - Data: Self Generated Data
@@ -214,6 +157,3 @@ with st.expander('About', expanded=True):
         - LinkedIn:https://www.linkedin.com/in/sp%C3%A9ro-falade-977180103/
         - Target: Make the dashboard User Friendly.        
     ''')
-
-
-
