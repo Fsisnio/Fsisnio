@@ -64,14 +64,6 @@ plt.ylabel('Gender')
 # Display the plot in Streamlit
 st.pyplot(fig)
 
-
-
-
-
-
-
-# Assuming 'df' is your DataFrame
-
 # Calculating the proportion of data sharing systems by gender
 data_sharing_proportion = df.groupby('genre')['accès_aux_données'].value_counts(normalize=True).unstack().fillna(0) * 100
 fig, ax = plt.subplots()
@@ -92,12 +84,6 @@ plt.ylabel('Gender')
 # Display the plot in Streamlit
 st.pyplot(fig)
 
-
-
-
-
-# Assuming 'df' is your DataFrame
-
 # Calculating the proportion of data sharing systems by gender
 data_sharing_proportion = df.groupby('Age')['accès_aux_données'].value_counts(normalize=True).unstack().fillna(0) * 100
 fig, ax = plt.subplots()
@@ -117,16 +103,6 @@ plt.ylabel('Gender')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-
-
-
-
-
-
-
-
-
-# Assuming 'df' is your DataFrame
 
 # Calculating the proportion of data sharing systems by gender
 data_sharing_proportion = df.groupby('year')['accès_aux_données'].value_counts(normalize=True).unstack().fillna(0) * 100
@@ -149,13 +125,6 @@ plt.ylabel('Gender')
 st.pyplot(fig)
 
 
-
-
-
-
-
-
-
 with st.expander('About', expanded=True):
     st.write('''
         - Data: Self Generated Data
@@ -165,6 +134,3 @@ with st.expander('About', expanded=True):
         - LinkedIn:https://www.linkedin.com/in/sp%C3%A9ro-falade-977180103/
         - Target: Make the dashboard User Friendly.        
     ''')
-
-
-
